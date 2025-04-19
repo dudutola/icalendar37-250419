@@ -9,7 +9,6 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html
       format.ics do
-        # render plain: @event.to_icalendar
         send_data @event.to_icalendar, filename: "#{@event.title}.ics"
       end
     end

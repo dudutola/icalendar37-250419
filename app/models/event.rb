@@ -16,7 +16,6 @@ class Event < ApplicationRecord
       e.uid           = "event-#{self.id}@localhost"
       e.sequence      = Time.now.to_i
       e.dtstamp       = Time.now.utc
-      # e.last_modified =  updated_at&.utc || Time.now.utc
     end
 
     cal.publish
