@@ -3,10 +3,12 @@
 <ul>
   <% @events.each do |event| %>
     <li>
-      <%= event.title %><br>
+      <%= link_to event_path(event) do  %>
+        <strong><%= event.title %></strong><br>
+      <% end %>
       <%= event.starts_at.strftime("%b %d, %Y %H:%M") %> -
       <%= event.ends_at.strftime("%H:%M") %><br>
-      <%= event.description %>
+      <%= event.description %><br>
     </li>
   <% end %>
 </ul>

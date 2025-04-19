@@ -1,0 +1,15 @@
+<h1><%= @event.title %></h1>
+
+
+<p>
+  Date: <%= @event.starts_at.strftime("%b %d, %Y %H:%M") %> -
+  <%= @event.ends_at.strftime("%H:%M") %>
+</p>
+<p>Descripton: <%= @event.description %></p>
+<br>
+
+<div>
+  <%= @event.to_icalendar %>
+
+  <%= link_to "add to calendar", event_path(@event, format: :ics) %>
+</div>
