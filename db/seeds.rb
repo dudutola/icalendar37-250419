@@ -7,3 +7,23 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Cleaning database..."
+Event.destroy_all
+
+puts "Creating events"
+Event.create!(
+  title: "Demo Day",
+  description: "LeWagon presentations",
+  starts_at: DateTime.new(2025, 4, 22, 10),
+  ends_at: DateTime.new(2025, 4, 22, 18),
+)
+
+Event.create!(
+  title: "Doctor Appointment",
+  description: "General check-up",
+  starts_at: DateTime.new(2025, 5, 19, 8),
+  ends_at: DateTime.new(2025, 5, 19, 10),
+)
+
+puts "Events created"
