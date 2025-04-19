@@ -9,7 +9,8 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html
       format.ics do
-        render plain: @event.to_icalendar
+        # render plain: @event.to_icalendar
+        send_data @event.to_icalendar, filename: "#{@event.title}.ics"
       end
     end
   end
@@ -19,11 +20,10 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        # render plain: @event.to_icalendar
         format.html { redirect_to @event }
         format.json { render :show }
       else
-        format.html { render :edit }
+        format.html { render :edit, status: :ok }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
