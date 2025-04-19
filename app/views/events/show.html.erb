@@ -1,6 +1,5 @@
 <h1><%= @event.title %></h1>
 
-
 <p>
   Date: <%= @event.starts_at.strftime("%b %d, %Y %H:%M") %> -
   <%= @event.ends_at.strftime("%H:%M") %>
@@ -13,3 +12,7 @@
 
   <%= link_to "add to calendar", event_path(@event, format: :ics) %>
 </div>
+<br>
+
+<%= link_to "Edit", edit_event_path(@event) %> ||
+<%= link_to "< Back", root_path(@event) %>

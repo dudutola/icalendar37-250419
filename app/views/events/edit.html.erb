@@ -1,0 +1,25 @@
+<%= form_with(model: @event)  do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :starts_at %>
+    <%= f.datetime_local_field :starts_at %>
+  </div>
+
+  <div>
+    <%= f.label :ends_at %>
+    <%= f.datetime_local_field :ends_at %>
+  </div>
+
+  <%= f.submit "Update Event" %>
+<% end %>
+
+<%= link_to "< Back", root_path(@event) %>

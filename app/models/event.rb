@@ -7,11 +7,13 @@ class Event < ApplicationRecord
     cal = Icalendar::Calendar.new
 
     cal.event do |e|
-      e.dtstart     = starts_at
-      e.dtend       = ends_at
+      e.dtstart     = Icalendar::Values::DateTime.new(starts_at, "tzid" => "Europe/Lisbon")
+      e.dtend       = Icalendar::Values::DateTime.new(ends_at, "tzid" => "Europe/Lisbon")
       e.summary     = title
       e.description = description
       e.ip_class    = "PRIVATE"
+      e.uid         = id.to_s
+      e.sequence    = Time.now.to_i
     end
 
     cal.publish
