@@ -21,9 +21,9 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event }
-        format.json { render :show }
+        format.json { render :show, status: :ok }
       else
-        format.html { render :edit, status: :ok }
+        format.html { render :edit }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
