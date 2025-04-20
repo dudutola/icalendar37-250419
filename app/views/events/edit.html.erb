@@ -19,6 +19,11 @@
     <%= f.datetime_local_field :ends_at %>
   </div>
 
+  <div>
+    <%= f.label :address %>
+    <%= f.text_area :address %>
+  </div>
+
   <%= f.submit "Update Event" %>
 <% end %>
 

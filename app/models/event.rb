@@ -4,6 +4,8 @@ class Event < ApplicationRecord
   validates :ends_at, presence: true
   validate :event_ends_after_starts
 
+  include Rails.application.routes.url_helpers
+
   def to_icalendar
     cal = Icalendar::Calendar.new
 
@@ -39,6 +41,7 @@ class Event < ApplicationRecord
       e.sequence = updated_at.to_i if updated_at.present?
       e.dtstamp       = Time.now.utc
       e.location      = address
+      e.url           = event_url(self)
     end
 
     cal.publish
