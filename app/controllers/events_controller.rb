@@ -9,7 +9,9 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html
       format.ics do
-        send_data @event.to_icalendar, filename: "#{@event.title}.ics"
+        event_ics = Events::IcalendarEvent.new(event: @event).call
+        # send_data @event.to_icalendar, filename: "#{@event.title}.ics"
+        send_data event_ics, filename: "#{@event.title}.ics"
       end
     end
   end
