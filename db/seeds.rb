@@ -17,6 +17,7 @@ Event.create!(
   description: "LeWagon presentations",
   starts_at: DateTime.new(2025, 4, 22, 10),
   ends_at: DateTime.new(2025, 4, 22, 18),
+  address: "Rua do Comércio, 150 Lisboa, Portugal"
 )
 
 Event.create!(
@@ -24,6 +25,7 @@ Event.create!(
   description: "General check-up",
   starts_at: DateTime.new(2025, 5, 19, 8),
   ends_at: DateTime.new(2025, 5, 19, 10),
+  address: "Av. da Liberdade, 99-150 Lisboa, Portugal"
 )
 
 puts "Events created"

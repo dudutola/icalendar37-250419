@@ -38,6 +38,7 @@ class Event < ApplicationRecord
       # e.sequence      = Time.now.to_i
       e.sequence = updated_at.to_i if updated_at.present?
       e.dtstamp       = Time.now.utc
+      e.location      = address
     end
 
     cal.publish
