@@ -1,14 +1,18 @@
 <h1><%= @event.title %></h1>
 
 <div class="event_details">
-  <p>
-    Date: <%= @event.starts_at.strftime("%b %d, %Y %H:%M") %> -
-    <%= @event.ends_at.strftime("%H:%M") %>
-  </p>
-  <p>Descripton: <%= @event.description %></p>
+  <div class="event">
+    <div>
+      <p>
+        <strong>Date:</strong> <%= @event.starts_at.strftime("%b %d, %Y %H:%M") %> -
+        <%= @event.ends_at.strftime("%H:%M") %>
+      </p>
+      <p><strong>Descripton:</strong> <%= @event.description %></p>
+    </div>
 
-  <div>
-    <%= link_to "add to calendar", event_path(@event, format: :ics) %>
+    <div class="add-btn">
+      <%= link_to "add to calendar", event_path(@event, format: :ics) %>
+    </div>
   </div>
   <br>
 

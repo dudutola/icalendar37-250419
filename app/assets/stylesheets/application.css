@@ -9,11 +9,23 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+
+body {
+  height: 110vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5deb347;
+}
+
 h1 {
   text-align: center;
 }
 
 form {
+  width: 100%;
   max-width: 500px;
   margin: 20px auto;
   padding: 15px;
@@ -75,6 +87,25 @@ a:hover {
 
 
 .event_details {
-  margin: auto;
+  /* margin: auto; */
   width: 70%;
+}
+
+.event {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.add-btn a {
+  border: 1px solid #007bff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.add-btn a:hover {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
 }
